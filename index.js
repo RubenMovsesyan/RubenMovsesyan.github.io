@@ -12,7 +12,7 @@ const GEN_PERCENT = 0.7;
 const FRAME_BEZEL = 20;
 
 canvas.width = window.innerWidth - FRAME_BEZEL;
-canvas.height = window.innerHeight - FRAME_BEZEL;
+canvas.height = window.innerHeight - 4 *FRAME_BEZEL;
 
 var aspect = canvas.width / canvas.height;
 var projection_matrix = new Matrix4();
@@ -26,7 +26,7 @@ projection_matrix.setPerspective(
 
 window.addEventListener("resize", function() {
     canvas.width = window.innerWidth - FRAME_BEZEL;
-    canvas.height = window.innerHeight - FRAME_BEZEL;
+    canvas.height = window.innerHeight - 4 * FRAME_BEZEL;
 
     aspect = canvas.width / canvas.height;
     projection_matrix = new Matrix4();

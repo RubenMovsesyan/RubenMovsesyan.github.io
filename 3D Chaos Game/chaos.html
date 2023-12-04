@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Chaos Game</title>
+    </head>
+    <body onload="main()" class="body">
+        <canvas id="chaos">
+            Please use a browser that supports "canvas"
+        </canvas>
+    </body>
+    <script src="App.js"></script>
+    <script src="Point.js"></script>
+    <script src="Path.js"></script>
+    <script src="Triangle.js"></script>
+    <script src="Cube.js"></script>
+    <script src="lib/small-math.js"></script>
+    <script src="lib/cuon-utils.js"></script>
+    <script src="lib/webgl-debug.js"></script>
+    <script src="lib/webgl-utils.js"></script>
+    <script src="lib/cuon-matrix.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        #chaos {
+            width: 98%;
+            height: 98%;
+            overflow-x: hidden;
+            overflow-y: hidden;
+        }
+
+        .body {
+            background-color: black;
+        }
+    </style>
+</html>

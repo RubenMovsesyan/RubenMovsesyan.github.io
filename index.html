@@ -3,18 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>3D Cellular Automata</title>
+    <link rel="stylesheet" href="styles.css">
+    <title>Ruben Movsesyan</title>
 </head>
-<body style="background-color:#333333">
-    <h3 style="color:white">Make sure you are running the latest version of chrome desktop</h3>
-    <canvas class="canvas" width="1000" height="1000"></canvas>
-    <script type="module" src="index.js"></script>
-    <script src="Cube.js"></script>
-    <script src="vertex_shader.js"></script>
-    <script src="fragment_shader.js"></script>
-    <script src="compute_shader.js"></script>
-    <script src="lib/small-math.js"></script>
-    <script src="lib/cuon-utils.js"></script>
-    <script src="lib/cuon-matrix.js"></script>
+<body>
+    <div class="selector-grid">
+        <a class="selector life3d" href="./3D Cellular Automata/life3d.html">
+            <h2>3D Cellular Automata</h2>
+        </a>
+
+        <a class="selector chaos3d" id="3dchaos" href="./3D Chaos Game/chaos.html">
+            <h2>3D Chaos Game</h2>
+        </a>
+    </div>
+
+    <!-- <a href="./3D Cellular Automata/life3d.html"></a>
+    <a href="./3D Chaos Game/chaos.html"></a> -->
 </body>
 </html>

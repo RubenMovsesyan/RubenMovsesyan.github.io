@@ -9,6 +9,15 @@
     --hover-text-color: black;
 }
 
+.canvas {
+    position: absolute;
+}
+
+.about {
+    position: absolute;
+    z-index: 1;
+}
+
 .topnav-a {
     display: inline;
     float: left;

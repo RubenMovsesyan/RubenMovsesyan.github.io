@@ -112,9 +112,13 @@ device.queue.writeBuffer(boidPositionsBuffers[1], 0, boidPositions);
 
 // Boid directions array
 const boidDirections = new Float32Array(2 * NUM_BOIDS);
+// for (let i = 0; i < 2 * NUM_BOIDS; i++) {
+//     boidDirections[i] = (0.001 * Math.random()) + 0.001;
+// }
 for (let i = 0; i < 2 * NUM_BOIDS; i++) {
-    boidDirections[i] = (0.001 * Math.random()) + 0.001;
+    boidDirections[i] = (0.002 * Math.random()) - 0.001;
 }
+
 const boidDirectionsBuffers = [
     device.createBuffer({
         label: 'boid directions in',

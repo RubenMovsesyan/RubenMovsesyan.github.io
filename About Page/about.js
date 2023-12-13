@@ -227,10 +227,12 @@ const renderPassDescriptor = {
     colorAttachments: [{
         view: context.getCurrentTexture().createView(),
         clearValue: { // #3CE8E8
-            r: 0.234375,
-            g: 0.90625,
-            // b: 0.5,
-            b: 0.90625,
+            // r: 0.234375,
+            // g: 0.90625,
+            // b: 0.90625,
+            r: 11.0 / 256.0,
+            g: 91.0 / 256.0,
+            b: 91.0 / 256.0,
             a: 1.0,
         },
         loadOp: 'clear',

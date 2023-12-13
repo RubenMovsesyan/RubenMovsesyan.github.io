@@ -1,5 +1,6 @@
 :root {
-    --backg-color: #3ce8e8;
+    /* --backg-color: #3ce8e8; */
+    --backg-color: #0b5b5b;
     
     --accent-color: #333333;
 
@@ -146,10 +147,20 @@ p {
     font-size: 3rem;
     text-decoration: underline;
     font-weight: bold;
+    color: white;
 }
 
 .contact {
     font-size: 2rem;
+    color: white;
+}
+
+.contact a {
+    color: #CCCCCC;
+}
+
+.contact a:hover {
+    color: #3ee8e8;
 }
 
 /* Animations */

@@ -3,22 +3,22 @@
         {
             "name": "Golden Gate",
             "href": "",
-            "image": "./images/Golden_Gate.jpg"
+            "image": "https://i.postimg.cc/kXCxkPtc/Golden-Gate.jpg"
         },
         {
             "name": "Tactical Luminance",
             "href": "",
-            "image": "./images/Tactical_Luminance.jpg"
+            "image": "https://i.postimg.cc/rpsGQGt2/Tactical-Luminance.jpg"
         },
         {
             "name": "On the way home",
             "href": "",
-            "image": "./images/On_the_way_home.JPG"
+            "image": "https://i.postimg.cc/QdxcdgmK/On-the-way-home.jpg"
         },
         {
             "name": "Black Widow",
             "href": "",
-            "image": "./images/black_widow.JPG"
+            "image": "https://i.postimg.cc/3xKFDQ8R/black-widow.jpg"
         }
     ]
 }

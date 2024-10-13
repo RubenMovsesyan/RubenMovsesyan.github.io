@@ -1,0 +1,94 @@
+html,
+body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: #000;
+}
+
+#pano-container {
+    width: 100%;
+    height: 100%;
+}
+
+#andromeda-panel {
+    width: 20vw;
+    height: auto;
+    aspect-ratio: calc(16/10);
+}
+
+.panel {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: repeat(1, 2fr);
+    width: 100%;
+    height: auto;
+    opacity: 1;
+    -webkit-transition: opacity 0.5s;
+    transition: opacity 0.5s;
+
+    background: rgba(255, 255, 255, 0);
+    box-shadow: 0 8px 32px 0 rgba(73, 73, 73, 0.37);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.panel-hovered {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: repeat(1, 2fr);
+    width: 100%;
+    height: auto;
+    opacity: 0;
+    -webkit-transition: opacity 0.5s;
+    transition: opacity 0.5s;
+}
+
+.image-and-text-selector {
+    background: rgba(0, 0, 0, 0);
+    position: relative;
+    /* justify-content: center; */
+    text-align: center;
+    vertical-align: center;
+}
+
+.info-text {
+    width: 100%;
+    height: 10%;
+    color: white;
+    font-family: "HelveticaNeue-CondensedBold", "HelveticaNeueBoldCondensed", "HelveticaNeue-Bold-Condensed", "Helvetica Neue Bold Condensed", "HelveticaNeueBold", "HelveticaNeue-Bold", "Helvetica Neue Bold", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosCnBold', "Helvetica", "Tahoma", "Geneva", "Arial Narrow", "Arial", sans-serif;
+    font-size: 2vw;
+    font-weight: 600;
+    font-stretch: condensed;
+}
+
+.info-image {
+    width: 100%;
+    height: 90%;
+}
+
+#andromeda-image {
+    background-image: url('./images/andromeda.jpg');
+}
+
+/* .image-and-text-selector img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10%; 
+} */
+
+.feathered-image {
+    width: 100%;
+    height: auto;
+    aspect-ratio: calc(16/9);
+    background-size: cover;
+    mask-image: radial-gradient(ellipse,
+            black 40%,
+            transparent 70%);
+    -webkit-mask-image: radial-gradient(ellipse,
+            black 40%,
+            transparent 70%);
+}

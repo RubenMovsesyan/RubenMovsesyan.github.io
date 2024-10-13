@@ -1,0 +1,19 @@
+{
+    "projects": [
+        {
+            "name": "Wooden Lantern",
+            "href": "./pages/lantern/index.html",
+            "image": "../images/lantern.png"
+        }, 
+        {
+            "name": "Bedside Table",
+            "href": "./pages/bedside_table/index.html",
+            "image": ""
+        }, 
+        {
+            "name": "Diploma Frame",
+            "href": "./pages/diploma_frame/index.html",
+            "image": ""
+        }
+    ]
+}

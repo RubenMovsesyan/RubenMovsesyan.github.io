@@ -1,36 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <title>Ruben Movsesyan</title>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="styles.css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <title>Ruben Movsesyan</title>
+    </head>
+    <body>
+        <!-- Selector grid -->
+        <div class="selector-grid">
+            <a class="selector" href="./Programming Projects/programming_projects.html">
+                <div class="coding-background fade-background">
+                    <h2 class="coding-text overlap-text text-offset">
+                        Programming Projects
+                    </h2>
+                </div>
 
-    <!-- Navigation bar -->
-    <div class="navbar">
-        <a class="topnav-a active" href="./index.html">Home</a>
-        <a class="topnav-a" href="./About Page/about.html">About</a>
-        <a class="topnav-a" href="./Contact Page/contact.html">Contact</a>
+                <!-- This would have been better as a single image but my original plan was to make them all slide down at different times :( -->
+                <div class="slide-down full-size txt1">
+                    <img src="./images/mat_text_1.png" />
+                </div>
+                <div class="slide-down full-size txt4">
+                    <img src="./images/mat_text_2.png" />
+                </div>
+                <div class="slide-down half-size txt2">
+                    <img src="./images/mat_text_1_half_blur.png" />
+                </div>
+                <div class="slide-down half-size txt5">
+                    <img src="./images/mat_text_2_half_blur.png" />
+                </div>
+                <div class="slide-down small-size txt3">
+                    <img src="./images/mat_text_1_full_blur.png" />
+                </div>
+                <div class="slide-down small-size txt6">
+                    <img src="./images/mat_text_2_full_blur.png" />
+                </div>
+            </a>
 
-        <a class="topnav-a-img" href="./index.html">
-            <img class="topnav-img" src="./images/logo.png"></img>
-        </a>
-    </div>
-</head>
-<body>
-    <!-- Selector grid -->
-    <div class="selector-grid">
-        <a class="selector life3d scale-up-center scale-down-center" href="./3D Cellular Automata/life3d.html">
-            <h2>3D Cellular Automata</h2>
-        </a>
+            <a class="selector" href="./Astro/index.html">
+                <div class="astronomy-background fade-background">
+                    <h2 class="astronomy-text overlap-text text-offset">Astronomy</h2>
+                </div>
+                <div class="slide-right">
+                    <img src="./images/astronomy_spaceship_1.png" />
+                </div>
+            </a>
 
-        <a class="selector chaos3d scale-up-center scale-down-center" id="3dchaos" href="./3D Chaos Game/chaos.html">
-            <h2>3D Chaos Game</h2>
-        </a>
+            <a class="selector" href="./Woodworking/index.html">
+                <div class="woodworking-background fade-background">
+                    <h2 class="woodworking-text overlap-text text-offset">Woodworking</h2>
+                </div>
+                <div class="slide-up">
+                    <img src="./images/lantern.png" />
+                </div>
+            </a>
 
-        <a class="selector boids scale-up-center scale-down-center" id="boids" href="./Boids/boids.html">
-            <h2>Boids</h2>
-        </a>
-    </div>
-</body>
+            <a class="selector" href="./Coffee/index.html">
+                <div class="coffee-background fade-background">
+                    <h2 class="coffee-text overlap-text text-offset">Coffee</h2>
+                </div>
+                <div id="steam-and-coffee">
+                    <script type="module" src="./scripts/steam.js"></script>
+                    <div id="steam"></div>
+                    <div id="coffee">
+                        <img src="./images/coffee.png" />
+                    </div>
+                </div>
+            </a>
+
+            <a class="selector" href="">
+                <div class="photography-background fade-background">
+                    <h2 class="photography-text overlap-text text-offset">Photography</h2>
+                </div>
+                <div id="camera">
+                    <script type="module" src="./scripts/flash.js"></script>
+                    <div id="flash"></div>
+                </div>
+            </a>
+        </div>
+    </body>
 </html>

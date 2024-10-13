@@ -1,0 +1,4 @@
+[ZoneTransfer]
+ZoneId=3
+ReferrerUrl=https://cloudconvert.com/
+HostUrl=https://us-east.storage.cloudconvert.com/tasks/1f8d2621-0b02-4b50-b3d1-832bf768b9dd/transparent_steam_3.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=cloudconvert-production%2F20241007%2Fva%2Fs3%2Faws4_request&X-Amz-Date=20241007T190031Z&X-Amz-Expires=86400&X-Amz-Signature=cc8476bf9bdf308b460935339a209178650f1904e86e4420c806b33f3a92f63e&X-Amz-SignedHeaders=host&response-content-disposition=attachment%3B%20filename%3D%22transparent_steam_3.png%22&response-content-type=image%2Fpng&x-id=GetObject

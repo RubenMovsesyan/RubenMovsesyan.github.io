@@ -73,7 +73,8 @@ body {
     height: var(--banner-height);
     background-position: left 0 top 30vh;
     /* background: var(--accent-color); */
-    background-image: url("./images/andromeda.jpg");
+    background-image: url("https://i.postimg.cc/v8X81qRz/andromeda.jpg");
+    background-size: cover;
     /* background-size: 50%; */
 }
 
@@ -82,7 +83,8 @@ body {
     /* overflow: hidden; */
     width: 100%;
     height: var(--banner-height);
-    background-image: url("./images/wood.jpg");
+    background-image: url("https://i.postimg.cc/fyP6c0fw/wood.jpg");
+    background-size: cover;
     /* background-size: 75%; */
 }
 
@@ -91,7 +93,8 @@ body {
     /* overflow: hidden; */
     width: 100%;
     height: var(--banner-height);
-    background-image: url("./images/coffee-background.jpg");
+    background-image: url("https://i.postimg.cc/jjVRVBNs/coffee-background.jpg");
+    background-size: cover;
     /* background-size: 75%; */
 }
 
@@ -99,7 +102,8 @@ body {
     position: absolute;
     width: 100%;
     height: var(--banner-height);
-    background-image: url("./images/cameras.jpg");
+    background-image: url("https://i.postimg.cc/WbH28d1q/cameras.jpg");
+    background-size: cover;
 }
 
 .text-offset {
@@ -280,7 +284,7 @@ body {
     width: var(--steam-size);
     height: var(--steam-size);
     /* background: rgba(0, 0, 0, 0.5); */
-    background-image: url("./images/transparent_steam_1.png");
+    background-image: url("https://i.postimg.cc/sgWRJKLb/transparent-steam-1.png");
     background-size: 100%;
     bottom: 0px;
 }
@@ -290,7 +294,7 @@ body {
     width: var(--steam-size);
     height: var(--steam-size);
     /* background: rgba(0, 0, 0, 0.5); */
-    background-image: url("./images/transparent_steam_2.png");
+    background-image: url("https://i.postimg.cc/BbbrPCDY/transparent-steam-2.png");
     background-size: 100%;
     bottom: 0px;
 }
@@ -300,7 +304,7 @@ body {
     width: var(--steam-size);
     height: var(--steam-size);
     /* background: rgba(0, 0, 0, 0.5); */
-    background-image: url("./images/transparent_steam_3.png");
+    background-image: url("https://i.postimg.cc/FKg5MzNZ/transparent-steam-3.png");
     background-size: 100%;
     bottom: 0px;
 }
@@ -313,7 +317,7 @@ body {
     z-index: 1;
     bottom: 30vh;
     right: -10vw;
-    background-image: url("./images/camera_with_flash.png");
+    background-image: url("https://i.postimg.cc/j2qsgNfP/camera-with-flash.png");
     background-size: 100%;
     /* transform: rotate(690deg); */
     /* -webkit-transition: all 0.5s; */
@@ -329,6 +333,7 @@ body {
     left: 35%;
     /* background-image: url("./images/flash_3.png"); */
     background-size: 100%;
+    loading: lazy;
     /* justify-content: center; */
 }
 

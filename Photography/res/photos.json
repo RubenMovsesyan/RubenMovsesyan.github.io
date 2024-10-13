@@ -1,0 +1,24 @@
+{
+    "photos": [
+        {
+            "name": "Golden Gate",
+            "href": "",
+            "image": "./images/Golden_Gate.jpg"
+        },
+        {
+            "name": "Tactical Luminance",
+            "href": "",
+            "image": "./images/Tactical_Luminance.jpg"
+        },
+        {
+            "name": "On the way home",
+            "href": "",
+            "image": "./images/On_the_way_home.JPG"
+        },
+        {
+            "name": "Black Widow",
+            "href": "",
+            "image": "./images/black_widow.JPG"
+        }
+    ]
+}

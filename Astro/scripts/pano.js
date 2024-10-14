@@ -8,7 +8,7 @@ var panorama,
 
 
 container = document.querySelector("#pano-container");
-panorama = new PANOLENS.ImagePanorama("./images/milky_way_360.jpg");
+panorama = new PANOLENS.ImagePanorama("https://i.postimg.cc/nzSRVm3Y/milky-way-360.jpg");
 
 add_andromeda = function() {
     andromeda_panel = document.querySelector("#andromeda-panel");

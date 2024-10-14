@@ -3,7 +3,7 @@
         {
             "name": "Wooden Lantern",
             "href": "./pages/lantern/index.html",
-            "image": "../images/lantern.png"
+            "image": "https://i.postimg.cc/j5x0tTjr/lantern.png"
         }, 
         {
             "name": "Bedside Table",

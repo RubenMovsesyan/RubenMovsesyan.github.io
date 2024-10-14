@@ -1,33 +1,54 @@
-var panorama, viewer, andromeda_panel, container, infospot;
+var panorama, 
+    viewer, 
+    container, 
+    andromeda_panel, 
+    andromeda_infospot,
+    pleiades_panel,
+    pleiades_infospot;
 
 
 container = document.querySelector("#pano-container");
-panorama = new PANOLENS.ImagePanorama("./images/milky_way.jpg");
+panorama = new PANOLENS.ImagePanorama("./images/milky_way_360.jpg");
 
-window.onload = function() {
+add_andromeda = function() {
     andromeda_panel = document.querySelector("#andromeda-panel");
-    console.log(andromeda_panel)
-    infospot = new PANOLENS.Infospot(350, PANOLENS.DataImage.Info);
-    infospot.position.set(-5000, -2100, -300);
-    infospot.addHoverElement(andromeda_panel, 150);
-    infospot.addEventListener('click', function() {
+    // console.log(andromeda_panel)
+    andromeda_infospot = new PANOLENS.Infospot(15, PANOLENS.DataImage.Info);
+    andromeda_infospot.position.set(-128, -115, 246);
+    andromeda_infospot.addHoverElement(andromeda_panel, 200);
+    andromeda_infospot.addEventListener('click', function() {
         window.location.href = "./blogs/andromeda_galaxy/index.html";
     });
 
-    infospot.addEventListener('hoverenter', function() {
-        // unfade(andromeda_panel);
-        // console.log('Hello');
-        // andromeda_panel.classList.remove("panel");
-        // andromeda_panel.classList.add("panel-hovered");
+    andromeda_infospot.addEventListener('hoverenter', function() {
     });
 
-    infospot.addEventListener('hoverleave', function() {
-        // fade(andromeda_panel);
-        // console.log('Bye');
-        // andromeda_panel.classList.remove("panel-hovered");
-        // andromeda_panel.classList.add("panel");
+    andromeda_infospot.addEventListener('hoverleave', function() {
     });
-    panorama.add(infospot);
+    panorama.add(andromeda_infospot);
+}
+
+add_pleiades = function() {
+    pleiades_panel = document.querySelector("#pleiades-panel");
+    // console.log(pleiades_panel)
+    pleiades_infospot = new PANOLENS.Infospot(15, PANOLENS.DataImage.Info);
+    pleiades_infospot.position.set(-256, -128, 80);
+    pleiades_infospot.addHoverElement(pleiades_panel, 200);
+    pleiades_infospot.addEventListener('click', function() {
+        window.location.href = "./blogs/pleiades/index.html";
+    });
+
+    pleiades_infospot.addEventListener('hoverenter', function() {
+    });
+
+    pleiades_infospot.addEventListener('hoverleave', function() {
+    });
+    panorama.add(pleiades_infospot);
+}
+
+window.onload = function() {
+    add_pleiades();
+    add_andromeda();
 }
 
 viewer = new PANOLENS.Viewer({ containter: container });

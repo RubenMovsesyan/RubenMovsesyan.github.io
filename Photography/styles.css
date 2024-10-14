@@ -1,19 +1,37 @@
 :root {
     --gap-size: 0.5vw;
+    --grid-columns: 3;
+    --grid-width: 85vw;
 }
 
 body {
     display: flex;
     justify-content: center;
+    background: rgb(243, 239, 228);
+    margin: 0;
+}
+
+#header {
+    background: black;
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-family: "Rajdhani", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 5vw;
 }
 
 #photo-grid {
     position: absolute;
-    top: 50vh;
+    top: 12vh;
     display: grid;
-    width: 75vw;
+    width: --grid-width;
     /* height: 600vh; */
-    grid-template-rows: repeat(auto-fill, 25vw);
+    grid-template-rows: repeat(auto-fill, calc(var(--grid-width) / var(--grid-columns)));
     grid-auto-rows: max-content;
     row-gap: var(--gap-size);
 }
@@ -27,8 +45,25 @@ body {
 }
 
 .photo-square {
-    width: 25vw;
-    height: 25vw;
+    z-index: 1;
+    width: calc(var(--grid-width) / var(--grid-columns));
+    height: calc(var(--grid-width) / var(--grid-columns));
+    -webkit-transition: all 0.25s;
+    transition: all 0.25s;
+}
+
+.photo-square:hover {
+    z-index: 2;
+    transform: scale(1.1);
+    box-shadow:
+        0px 0px 2.2px rgba(0, 0, 0, 0.15),
+        0px 0px 5.4px rgba(0, 0, 0, 0.224),
+        0px 0px 10.1px rgba(0, 0, 0, 0.278),
+        0px 0px 18.1px rgba(0, 0, 0, 0.322),
+        0px 0px 33.8px rgba(0, 0, 0, 0.358),
+        0px 0px 81px rgba(0, 0, 0, 0.39);
+    -webkit-transition: all 0.25s;
+    transition: all 0.25s;
 }
 
 .photo-square img {

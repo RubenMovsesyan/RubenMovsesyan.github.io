@@ -12,6 +12,8 @@ async function fetch_photo_data() {
 // This needs to be both here and in the document ready function to work :'(
 fetch_photo_data();
 
+
+//TODO Make lazy loading for future to have an infinite scroll
 $(document).ready(async function() {
     await fetch_photo_data();
     var num_rows = photos_array.length / NUM_COLUMNS;

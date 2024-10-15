@@ -51,6 +51,8 @@ body {
 button {
     outline: none;
     margin: 0;
+    border-style: solid;
+    border: 0;
 }
 
 #left:hover, #right:hover {

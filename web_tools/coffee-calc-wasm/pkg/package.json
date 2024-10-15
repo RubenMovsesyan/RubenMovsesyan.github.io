@@ -1,0 +1,15 @@
+{
+  "name": "coffee-calc-wasm",
+  "type": "module",
+  "version": "0.1.0",
+  "files": [
+    "coffee_calc_wasm_bg.wasm",
+    "coffee_calc_wasm.js",
+    "coffee_calc_wasm.d.ts"
+  ],
+  "main": "coffee_calc_wasm.js",
+  "types": "coffee_calc_wasm.d.ts",
+  "sideEffects": [
+    "./snippets/*"
+  ]
+}

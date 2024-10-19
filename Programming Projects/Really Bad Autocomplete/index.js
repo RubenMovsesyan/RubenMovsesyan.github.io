@@ -1,10 +1,7 @@
 import init, { 
-    create_trie,
     create_trie_from_csv_text,
     create_memory,
-    create_memory_from_word,
     update_word,
-    update_and_reset_word,
     get_suggested_words
 } from "./pkg/autocomplete.js";
 
@@ -12,18 +9,35 @@ import csv_text from './csv.js';
 // I know this is bad but I need to see if this works first before making it better
 
 
-async function run() {
-    await init();
+let trie = undefined;
 
+async function define_trie() {
     let trie = create_trie_from_csv_text(
         csv_text,
          "word"
         );
     console.log("Trie generated... Start Typing");
+}
+
+async function run() {
+    await init();
+
+    // let trie = create_trie_from_csv_text(
+    //     csv_text,
+    //      "word"
+    //     );
+    // console.log("Trie generated... Start Typing");
     
+    define_trie();
+
     let mem = create_memory();
 
     function update_output(e) {
+        if (trie === undefined) {
+            return;
+        }
+
+        
         if (e.target.value.at(-1) == '\n') {
             e.target.value = e.target.value.slice(0, -1);
         }

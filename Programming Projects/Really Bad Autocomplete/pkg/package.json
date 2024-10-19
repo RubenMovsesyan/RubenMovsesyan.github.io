@@ -1,0 +1,15 @@
+{
+  "name": "autocomplete",
+  "type": "module",
+  "version": "0.1.0",
+  "files": [
+    "autocomplete_bg.wasm",
+    "autocomplete.js",
+    "autocomplete.d.ts"
+  ],
+  "main": "autocomplete.js",
+  "types": "autocomplete.d.ts",
+  "sideEffects": [
+    "./snippets/*"
+  ]
+}

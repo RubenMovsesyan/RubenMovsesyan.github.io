@@ -12,11 +12,11 @@ import csv_text from './csv.js';
 let trie = undefined;
 
 async function define_trie() {
-    let trie = create_trie_from_csv_text(
+    trie = create_trie_from_csv_text(
         csv_text,
          "word"
         );
-    console.log("Trie generated... Start Typing");
+    console.log("Trie generated... Start Typing now");
 }
 
 async function run() {
@@ -27,17 +27,10 @@ async function run() {
     //      "word"
     //     );
     // console.log("Trie generated... Start Typing");
-    
-    define_trie();
 
     let mem = create_memory();
 
     function update_output(e) {
-        if (trie === undefined) {
-            return;
-        }
-
-        
         if (e.target.value.at(-1) == '\n') {
             e.target.value = e.target.value.slice(0, -1);
         }
@@ -75,8 +68,10 @@ async function run() {
         document.getElementById("autocomplete-text-show").innerText = output;
     }
 
-    document.getElementById("autocomplete-input").addEventListener("input", update_output);
-    document.getElementById("autocomplete-input").addEventListener("keydown", update_output);
+    define_trie().then(() => {
+        document.getElementById("autocomplete-input").addEventListener("input", update_output);
+        document.getElementById("autocomplete-input").addEventListener("keydown", update_output);
+    });
 }
 
 run()

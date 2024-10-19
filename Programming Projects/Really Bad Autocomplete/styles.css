@@ -1,0 +1,382 @@
+:root {
+    --autocomplete-width: 50vw;
+    --autocomplete-height: 10vh;
+
+    --bar-width: 5vh;
+    --bar-height: 1vh;
+    --hamburger-gap: 1vh;
+    --foreground: #333;
+    --background: rgb(207, 247, 255);
+    --hamburger-margin-top: 1vh;
+    --hamburger-margin-left: 1vw;
+    --animation-timing: 200ms ease-in-out;
+    --hamburger-height: calc(var(--bar-height) * 3 + var(--hamburger-gap) * 2);
+    --sidebar-padding-left: 1vw;
+    --sidebar-padding-top: 1vh;
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+.hamburger-menu {
+    --x-width: calc(var(--hamburger-height) * 1.41421356237);
+    /* --x-width: 20px; */
+
+    display: flex;
+    flex-direction: column;
+    gap: var(--hamburger-gap);
+    width: max-content;
+    position: absolute;
+    top: var(--hamburger-margin-top);
+    left: var(--hamburger-margin-left);
+    z-index: 3;
+    cursor: pointer;
+}
+
+.hamburger-menu::before,
+.hamburger-menu::after,
+.hamburger-menu input {
+    content: "";
+    width: var(--bar-width);
+    height: var(--bar-height);
+    background-color: var(--foreground);
+    border-radius: 9999px;
+
+    -webkit-transition: opacity var(--animation-timing),
+        width var(--animation-timing),
+        rotate var(--animation-timing),
+        translate var(--animation-timing),
+        background-color var(--animation-timing);
+
+    transition: opacity var(--animation-timing),
+        width var(--animation-timing),
+        rotate var(--animation-timing),
+        translate var(--animation-timing),
+        background-color var(--animation-timing);
+    transform-origin: left center;
+}
+
+.hamburger-menu input {
+    appearance: none;
+    padding: 0;
+    margin: 0;
+    outline: none;
+    pointer-events: none;
+}
+
+.hamburger-menu input:checked {
+    opacity: 0;
+    width: 0;
+
+    -webkit-transition: opacity var(--animation-timing), width var(--animation-timing);
+    transition: opacity var(--animation-timing), width var(--animation-timing);
+}
+
+.hamburger-menu:has(input:checked) {
+    --foreground: rgb(207, 247, 255);
+    --background: #333;
+}
+
+.hamburger-menu:has(input:focus-visible)::before,
+.hamburger-menu:has(input:focus-visible)::after,
+.hamburger-menu input:focus-visible {
+    border: 1px solid var(--background);
+}
+
+.hamburger-menu:has(input:checked)::before {
+    rotate: 45deg;
+    width: var(--x-width);
+    translate: 0 calc(var(--bar-height) / -2);
+}
+
+.hamburger-menu:has(input:checked)::after {
+    rotate: -45deg;
+    width: var(--x-width);
+    translate: 0 calc(var(--bar-height) / 2);
+}
+
+
+.sidebar {
+    -webkit-transition: translate var(--animation-timing);
+    transition: translate var(--animation-timing);
+    translate: -100%;
+    padding: var(--sidebar-padding-top) var(--sidebar-padding-left);
+    padding-top: calc(var(--hamburger-height) + var(--hamburger-margin-top) + 1rem);
+    background-color: var(--foreground);
+    color: var(--background);
+    max-width: 30vw;
+    min-height: 100vh;
+    /* height: max-content; */
+    font-family: monospace;
+    overflow-x: hidden;
+    overflow-wrap: break-word;
+    /* overflow-y: scroll; */
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    /* left: 0; */
+}
+
+.hamburger-menu:has(input:checked) + .sidebar {
+    translate: 0;
+    -webkit-transition: translate var(--animation-timing);
+    transition: translate var(--animation-timing);
+}
+
+
+body {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    /* overflow: scroll; */
+}
+
+#autocomplete-bounding-box {
+    width: 100%;
+    height: 100%;
+    /* position: absolute; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+}
+
+#autocomplete-container {
+    position: absolute;
+
+    left: calc(50vw - var(--autocomplete-width) / 2);
+    top: calc(50vh - var(--autocomplete-height) / 2);
+
+    width: var(--autocomplete-width);
+    height: var(--autocomplete-height);
+
+    display: flex;
+    align-items: center;
+    background: white;
+
+    border-radius: 10px;
+    box-shadow:
+        0.9px 1.1px 2.2px rgba(0, 0, 0, 0.037),
+        2.1px 2.6px 5.3px rgba(0, 0, 0, 0.053),
+        3.9px 4.9px 10px rgba(0, 0, 0, 0.065),
+        6.9px 8.7px 17.9px rgba(0, 0, 0, 0.077),
+        13px 16.3px 33.4px rgba(0, 0, 0, 0.093),
+        31px 39px 80px rgba(0, 0, 0, 0.13);
+}
+
+#autocomplete-input {
+    z-index: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+    resize: none;
+    line-height: 9.2vh;
+    overflow: hidden;
+    white-space: pre;
+    /* vertical-align: middle; */
+    /* position: relative; */
+}
+
+#autocomplete-text-show {
+    color: gray;
+    white-space: pre;
+    z-index: 0;
+    pointer-events: none;
+}
+
+#autocomplete-input,
+#autocomplete-text-show {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    font-size: 3vw;
+    font-family: monospace;
+}
+
+#sidebar-nav {
+    position: relative;
+    height: 90%;
+    overflow-y: scroll;
+}
+
+
+#github-text {
+    position: relative;
+    top: 0;
+    left: 0;
+    margin: 0;
+    height: 8%;
+    display: flex;
+    align-items: center;
+}
+
+#github-link {
+    width: 10%;
+    height: auto;
+    position: absolute;
+    /* right: var(--sidebar-padding-left); */
+    right: 0;
+    /* bottom: 0; */
+}
+
+#github-link img {
+    position: absolute;
+    width: 100%;
+    height: auto;
+}
+
+#find-on-github-text {
+    position: absolute;
+    top: 0;
+    /* left: 0; */
+    width: 90%
+}
+
+#github-glow {
+    position: absolute;
+    opacity: 0;
+    width: 100%;
+    height: auto;
+    filter: blur(5px);
+
+    -webkit-transition: opacity var(--animation-timing);
+    transition: opacity var(--animation-timing);
+}
+
+#github-link:hover > #github-glow {
+    opacity: 1;
+    
+    -webkit-transition: opacity var(--animation-timing);
+    transition: opacity var(--animation-timing);
+}
+
+#sidebar-title {
+    font-size: 300%;
+}
+
+.description-text {
+    font-size: 200%;
+    /* font-size: 3vw; */
+    /* overflow-x: wrap;
+    overflow-y: scroll; */
+}
+
+
+@keyframes move {
+    100% {
+        transform: translate3d(0, 0, 1px) rotate(360deg);
+    }
+}
+
+.background {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background: #b9efff;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.background span {
+    width: 50vmin;
+    height: 50vmin;
+    border-radius: 50vmin;
+    backface-visibility: hidden;
+    position: absolute;
+    animation: move;
+    animation-duration: 3;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+
+.background span:nth-child(0) {
+    color: #ffffff;
+    top: 90%;
+    left: 67%;
+    animation-duration: 121s;
+    animation-delay: -92s;
+    transform-origin: 0vw -11vh;
+    box-shadow: 100vmin 0 13.297141835353418vmin currentColor;
+}
+
+.background span:nth-child(1) {
+    color: #ffffff;
+    top: 66%;
+    left: 86%;
+    animation-duration: 61s;
+    animation-delay: -214s;
+    transform-origin: 11vw 11vh;
+    box-shadow: 100vmin 0 13.147626817666527vmin currentColor;
+}
+
+.background span:nth-child(2) {
+    color: #ffffff;
+    top: 49%;
+    left: 60%;
+    animation-duration: 121s;
+    animation-delay: -126s;
+    transform-origin: -4vw 25vh;
+    box-shadow: 100vmin 0 12.813463543969519vmin currentColor;
+}
+
+.background span:nth-child(3) {
+    color: #ffffff;
+    top: 13%;
+    left: 64%;
+    animation-duration: 296s;
+    animation-delay: -321s;
+    transform-origin: 10vw -1vh;
+    box-shadow: -100vmin 0 13.07894155117183vmin currentColor;
+}
+
+.background span:nth-child(4) {
+    color: #ffffff;
+    top: 80%;
+    left: 49%;
+    animation-duration: 475s;
+    animation-delay: -328s;
+    transform-origin: 18vw 7vh;
+    box-shadow: 100vmin 0 12.78634688485837vmin currentColor;
+}
+
+.background span:nth-child(5) {
+    color: #ffffff;
+    top: 46%;
+    left: 52%;
+    animation-duration: 43s;
+    animation-delay: -94s;
+    transform-origin: -11vw 4vh;
+    box-shadow: 100vmin 0 12.917248626039905vmin currentColor;
+}
+
+.background span:nth-child(6) {
+    color: #ffffff;
+    top: 82%;
+    left: 34%;
+    animation-duration: 148s;
+    animation-delay: -258s;
+    transform-origin: 22vw 21vh;
+    box-shadow: -100vmin 0 12.764974367929657vmin currentColor;
+}
+
+.background span:nth-child(7) {
+    color: #ffffff;
+    top: 22%;
+    left: 26%;
+    animation-duration: 419s;
+    animation-delay: -191s;
+    transform-origin: -7vw 14vh;
+    box-shadow: 100vmin 0 12.871615771071479vmin currentColor;
+}

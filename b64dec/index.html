@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <script>
+        function getBase64FromURL() {
+            const params = new URLSearchParams(window.location.search);
+            let base64String = params.get("base64");
+            console.log(base64String);
+
+            if (base64String) {
+                try {
+
+                    base64String = base64String.replace(/-/g, '+').replace(/_/g, '/').replace('\n', '');
+                    console.log(base64String);
+                    const decoded = atob(base64String);
+                    console.log(decoded);
+                    document.write(decoded);
+                } catch (e) {
+                    console.log(e);
+                }
+            } else {
+                document.body.innerHTML = "<p>No Base64 string found.</p>";
+            }
+        }
+
+        getBase64FromURL();
+    </script>
+</body>
+</html>
